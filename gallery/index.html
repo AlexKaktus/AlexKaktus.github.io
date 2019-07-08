@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet">
+	<style>
+
+		@keyframes fadeIn {
+  			from {
+  				opacity: 0;
+  			}
+				
+			to {
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadeOut {
+  			from {
+  				opacity: 1;
+  			}
+				
+			to {
+				opacity: 0;
+			}
+		}
+
+		@keyframes slideIn {
+  			from {
+  				transform: translateY(0);
+  			}
+				
+			to {
+				transform: translateY(-40px);
+			}
+		}
+
+		@keyframes slideOut {
+  			from {
+  				transform: translateY(-40px);
+  			}
+				
+			to {
+				transform: translateY(0);
+			}
+		}
+		.micromodal-slide {
+			display: none;
+		}
+		.micromodal-slide.is-open {
+			display: block;
+		}
+		.micromodal-slide[aria-hidden='true'] .modal__overlay {
+			animation: fadeOut 0.3s both;
+		}
+
+		.micromodal-slide[aria-hidden='false']  .modal__overlay {
+			animation: fadeIn 0.3s both;
+		}
+	
+		.micromodal-slide[aria-hidden='true'] .window {
+			animation: slideOut 0.3s both;
+		}
+
+		.micromodal-slide[aria-hidden='false']  .window {
+			animation: slideIn 0.3s both;
+		}
+
+		h1 {
+			width: 100%;
+			font-size: 48px;
+			font-weight: bold;
+			color: #0077e5;
+			text-shadow:2px 2px 0 #23eae6, 4px 4px 0 #1b7fbd, 6px 6px 0 #112f91;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+
+		.modal {
+			display: none;
+		}
+		.modal.is-open {
+		    display: block;
+		}
+		.modal__overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			background-color: #00000040;
+			right: 0;
+			z-index: 10;
+			bottom: 0;
+			outline: none;
+			display: flex;
+			-ms-align-items: center;
+				align-items: center;	
+			justify-content: center;
+		}
+
+		.window {
+			max-width: 1200px;
+			width: 90%;
+			max-height: calc(1200px / 16 *9);
+			height: calc(90vw / 16 * 9); 
+
+			background-position: center;
+			-webkit-background-size: cover;
+			background-size: cover;
+			border-radius: 10px;
+			padding: 10px;
+			box-sizing: border-box;
+			background-color: #fff;
+		}
+		
+		
+
+		.box {
+         display: flex;
+         flex-wrap: wrap;
+         max-width: 1000px;
+         margin: auto;
+         font-family: 'Noto Sans', sans-serif;
+
+		}
+		.item:after {
+			content: "";
+			width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            opacity: 0;
+            transition: 0.4s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+		}
+		.text {
+			color: white;
+			font-size: 22px;
+			font-weight: bold;
+			text-shadow: 1px 2px 1px rgba(0,0,0, 0.5);
+			z-index: 1;
+			opacity: 0;
+			transition: 0.3s;
+
+
+		}
+		@media(pointer: fine) {
+			.item:hover:after{
+				opacity: 1;
+
+
+			}
+			.item:hover .text{
+				opacity: 1;
+
+			}
+
+			
+		}
+		.item {
+			width: calc(100% / 3 - 20px);
+			height: 300px;
+			background-color: black;
+			margin: 10px; 
+			background-position: center;
+			background-size: cover;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			-ms-align-items: center;
+			align-items: center;
+			z-index: 0;
+			cursor: pointer;
+		}
+
+		@media(max-width: 768px){
+			.item {
+				width: calc(100% / 2 - 20px);
+			}
+		}
+
+		@media(max-width: 480px){
+			.item {
+				width: calc(100% - 20px);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="modal micromodal-slide " id="modal" aria-hidden="true">
+		<div class="modal__overlay flex" tabindex="-1" data-custom-close='modal'>
+			<div class="window">
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="box">
+		<h1 class="title">Галерея звёзд</h1>
+		<div class="item" data-custom-open='modal' style='background-image: url(img3.jpg);'><span class="text">Посмотреть</span></div>
+		<div class="item" data-custom-open='modal' style='background-image: url(img2.jpg);'><span class="text">Посмотреть</span></div>
+		<div class="item" data-custom-open='modal' style='background-image: url(img1.jpg);'><span class="text">Посмотреть</span></div>
+		<div class="item" data-custom-open='modal' style='background-image: url(pict 1.jpg);'><span class="text">Чё смотришь???</span></div>
+		<div class="item" data-custom-open='modal' style='background-image: url(pict2.jpg);'><span class="text">Посмотреть</span></div>
+		<div class="item" data-custom-open='modal' style='background-image: url(Volna.jpg);'><span class="text">Посмотреть</span></div>
+		<div class="item" data-custom-open='modal' style='background-image: url(samolot.jpg);'><span class="text">Посмотреть</span></div>
+		<div class="item" data-custom-open='modal' style='background-image: url(Boda.jpg);'><span class="text">Посмотреть</span></div>
+	</div>
+	
+
+	<script src="micromodal.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+				let m = document.querySelector('.window')
+				let images = document.querySelectorAll('.item')
+				for (let image of images) {
+					image.addEventListener('click', function() {
+						m.style.backgroundImage = image.style.backgroundImage;
+					})
+				}
+				MicroModal.init({
+				onShow: modal => {
+
+						console.info(`${modal} is shown`)
+					}, // [1]
+				onClose: modal => console.info(`${modal.id} is hidden`), // [2]
+				openTrigger: 'data-custom-open', // [3]
+				closeTrigger: 'data-custom-close', // [4]
+				disableScroll: false, // [5]
+				disableFocus: true, // [6]
+				awaitCloseAnimation: true, // [7]
+				debugMode: true // [8]
+				});
+			});
+	</script>
+</body>
+</html>
