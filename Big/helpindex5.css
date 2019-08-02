@@ -1,0 +1,19 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	margin: 20px;
+	background-color: #0c084c, ;
+}
+
+.glavn {
+		max-width: 900px;
+		justify-content: flex-start;
+		color: black;
+		text-shadow: 1px 1px 0.5px red;
+		font-size: 25px;
+		box-sizing: border-box;
+}
+
+.kartinka {
+		max-width:100%; 
+		box-shadow: 0 0 10px 5px rgba(0,0,0, 0.25)
+}	

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>filter</title>
+  <style>
+   .bw {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); /* Чёрно-белое изображение */
+    transition: 1.5s; /* Плавный переход */
+   }
+   .bw:hover {
+    -webkit-filter: none;
+    filter: none; /* Убираем фильтр */
+   }
+  </style>
+ </head>
+ <body>
+  <img src="image/aquaria2.jpg" alt="" class="bw">
+  <img src="image/aquaria3.jpg" alt="" class="bw">
+ </body>
+</html>

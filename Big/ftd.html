@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Overflow and animation</title>
+	<style>
+		.box {
+			width: 200px;
+			height: 200px;
+			margin: 100px;
+			border: 2px solid black;
+
+			background-image: url(tf.jpg);
+			-webkit-background-size: cover;
+			background-size: cover;
+			background-position:  center;
+
+			position: relative;
+			overflow: hidden;
+		}
+
+		.item {
+			width: 100%;
+			height: 100%;
+			background-color: #00ffff80;
+			transition: 0.3s background-color, 0.5s top, 0.5s left;
+
+			position: absolute;
+			top: -200px;
+			/*left: -200px;*/
+			right: 0;
+
+			box-sizing: border-box;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+
+		}
+
+		.item-text {
+			color: white;
+			font-size: 40px;
+			font-weight: bold;
+			font-family: monospace;
+			text-shadow: 1px 1px 1px black;
+			opacity: 0;
+			transition: 0.7s;
+
+
+		}
+
+		.filter {
+			transition: 5s;
+
+		}
+		@media (pointer: fine) {
+			.box:hover .item, .item:hover {
+			top: 0;
+			left: 0;
+
+
+			}
+
+			.box:hover .item .item-text, .item:hover .item-text {
+				opacity: 1;
+			}
+
+			.filter:hover {
+				filter: hue-rotate(360deg);
+
+			}
+
+		}
+
+	</style>
+</head>
+<body>
+			<div class="box">
+				<div class="item">
+					<span class="item-text">Поле</span>
+				</div>
+
+			</div>
+			<div class="box filter"></div>
+</body>
+</html>

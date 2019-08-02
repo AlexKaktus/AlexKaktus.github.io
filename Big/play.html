@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<style>
+	button {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		margin: 0;
+	}
+
+	.titel {
+		font-size: 80px;
+		font-family: 'Roboto Condensed';
+		opacity: 1;
+
+	}
+
+	.img {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	opacity: 0.3;
+	}
+</style>
+<body>
+<div class="img" style="background-image: url(18880.jpg)"></div>
+	<button class="change-color">Click to make body great again</button>
+	<h1 class="titel">Продам гараж</h1>
+	<script>
+		// var name = 'Alex';
+		// console.log('name: ', name);
+		// var age = 13;
+		// console.log('age: ', age);
+		// var city = 'Moscow'
+		// console.log('city: ', city);
+		// var isReady = true;
+		// console.log('isReady: ', isReady);
+
+
+		var changer = document.querySelector('.change-color');
+		console.log('changer: ', changer);
+		console.log('typeof(changer): ', typeof(changer));
+
+		changer.style.width = '500px';
+		changer.style.height = '75px';
+
+		var counter = 0;
+		changer.onclick = function() {
+			counter = counter +1;
+			console.log('counter: ', counter);
+			document.body.style.backgroundColor = 'rgb(' + Math.round(Math.random() * 255) + ','
+														   + Math.round(Math.random() * 255) + ','		
+														   + Math.round(Math.random() * 255) + ')';											
+			// if(counter == 1) {
+			// document.body.style.backgroundColor = 'blue';	
+			// }
+			// if(counter == 2) {
+			// document.body.style.backgroundColor = 'red';	
+			// }
+			// if(counter == 3) {
+			// document.body.style.backgroundColor = 'yellow';	
+			// }
+			// if(counter == 4) {
+			// document.body.style.backgroundColor = 'lightgreen';	
+			// }
+			// if(counter == 5) {
+			// document.body.style.backgroundColor = '#ffb997';	
+			// }
+			// if(counter == 6) {
+			// document.body.style.backgroundColor = '#293462';	
+			// }
+			// if(counter == 7) {
+			// document.body.style.backgroundColor = '#ffdd67';	
+			// }
+			// if(counter == 8) {
+			// document.body.style.backgroundColor = '#d04925';	
+			// }
+			// if(counter == 9) {
+			// document.body.style.backgroundColor = '#00818a';	
+			// }
+			// if(counter == 10) {
+			// document.body.style.backgroundColor = '#f7be16';	
+			// }
+			// if(counter == 11) {
+			// document.body.style.backgroundColor = '#af0404';	
+			// }
+			// if(counter == 12) {
+			// document.body.style.backgroundColor = '#614ad3';	
+			// }
+			// if(counter == 13) {
+			// document.body.style.backgroundColor = '#23eae6';	
+			// }
+			// if(counter == 14) {
+			// document.body.style.backgroundColor = '#f6ef98';	
+			// }
+			// if(counter == 15) {
+			// document.body.style.backgroundColor = '#1b7fbd';	
+			// }
+			// if(counter == 16) {
+			// document.body.style.backgroundColor = '#112f91';	
+			// }
+			// setTimeout(function () {} 1000)
+
+			setInterval(function() {
+				document.body.style.backgroundColor = 'rgb(' + Math.round(Math.random() * 255) + ','
+														   + Math.round(Math.random() * 255) + ','		
+														   + Math.round(Math.random() * 255) + ')';			
+														},10)
+
+		}
+	</script>
+</body>
+</html>

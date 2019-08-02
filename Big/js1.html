@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			.box {
+			height: 100px;
+			width: 100px;
+			margin: 10px;
+			background-color: darkred;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<script>
+			// for (var i = 0; i < 10; ++i) {
+					// 	console.log('i: ', i);
+			// }
+			// 	let i = 0;
+		// while (i <= 10) { // выводит 0, затем 1, затем 2
+			// 	console.log('i: ', i);
+			// 	i++;
+		// }
+		var boxs = document.querySelectorAll(".box");
+		console.log('boxs: ', boxs);
+		for  (var i = 0; i < boxs.length; i++){
+			 console.log('boxs[i]: ',boxs[i] );
+			 // boxs[i].style.backgroundColor="blue";
+			 if (i%2){
+			 	boxs[i].style.backgroundColor="blue";
+			 }
+		}
+		</script>
+		
+	</body>
+</html>

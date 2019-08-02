@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			height: 50px;
+			width: 200px;
+			background-color: darkorange;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="clicker"></div>
+	<script>
+	var a = 10;
+	console.log('a: ', a);
+	var name = "Alex";
+	console.log("Hello " + name); 
+	var isReady = true;
+	console.log('isReady: ', isReady);
+	var div = document.querySelector(".clicker");
+	console.log('div: ', div);
+	div.style.backgroundColor = "red";
+	 var counter = 0;
+	div.onclick = function() {
+		console.log('Hello:' + counter);
+		counter += 1;
+	}
+	</script>
+
+</body>
+</html>

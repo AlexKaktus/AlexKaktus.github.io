@@ -1,0 +1,18 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	margin: 20px;
+}
+
+.glavn {
+		max-width: 900px;
+		justify-content: flex-start;
+		color: black;
+		text-shadow: 1px 1px 0.5px red;
+		font-size: 25px;
+		box-sizing: border-box;
+}
+
+p.gang {
+	font-size: 20px;
+}
+

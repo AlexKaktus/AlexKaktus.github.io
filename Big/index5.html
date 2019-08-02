@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Merriweather:700&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta charset="UTF-8">
+		<title>Fortnite</title>
+		<link rel="stylesheet" href="main5.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav class="topnav">
+				<a href="#news" class="link">Новости</a>
+				<a href="#gallery" class="link">Галерея</a>
+				<a href="#story" class="link">История</a>
+			</nav>
+		</div>
+		<header class="header">
+			<h1 class="main-title">Fortnite</h1>
+		</header>
+		<div class="box" id='story'>
+			<h2 class="box-title">История</h2>
+			<div class="box-item lax box-item__img" style="background-image: url(cf.jpg)" data-lax-translate-x="vh -70, elh 0"
+			data-lax-anchor="self" ></div>
+			<div class="box-item lax" data-lax-translate-x="vh 70, elh 0"
+			data-lax-anchor="self">Игра была анонсирована в далёком 2011 году компанией Epic Games. Игра, создаваемая автором знаменитой Unreal Tournament, сразу заинтересовала многих фанатов студии. Следующие новости об игре появились лишь в 2014, компания заявила, что игра будет бесплатной, а её закрытая альфа версия будет доступна уже в декабре. Закрытая бета появилась уже в 2015 году на компьютерах компании Apple.</div>
+			<div class="box-item lax" data-lax-translate-x="vh -70, elh 0"
+			data-lax-anchor="self">А уже в 2017 году игра появилась в раннем доступе, и любой игрок мог скачать Фортнайт, но за отдельную плату. В Августе компания Epic Games подтвердила, что в Fortnite играет уже более миллиона человек. Несмотря на то, что игра неплохо продавалась — результаты не радовали разработчиков игры, и компания искала возможности сделать игру популярнее. Такой возможностью стало создание режима Fortnite Battle Royale, который сделал Фортнайт самой популярной игрой 2018 года.</div>
+			<div class="box-item lax box-item__img" data-lax-translate-x="vh 70, elh 0"
+			data-lax-anchor="self" style="background-image: url(ft.jpg)"></div>
+			<div class="box-item lax box-item__img" data-lax-translate-x="vh -20, elh 0"
+			data-lax-anchor="self" style="background-image: url(tf.jpg)"></div>
+			<div class="box-item lax" data-lax-translate-x="vh 20, elh 0"
+				data-lax-anchor="self">Fortnite — песочница кооперативного прохождения в жанре survival.
+			При первом запуске игры пользователей встречает редактор создания персонажа. В нем игрок может причислить своего персонажа к одному из четырех классов: ниндзя, строитель, чужеземец, коммандос. Каждый класс имеет свои особенности и определенный набор характеристик. К примеру, строителю подвластно возведение зданий огромного размера, а класс «ниндзя» мастерски владеет оружием ближнего боя.</div>
+		</div>
+		<div class="header"  style="height: 500px;"></div>
+		<div class="box" id='news'>
+			<h2 class="box-title"style="margin-left: 10px" >Новости</h2>
+			<div class="new-item size3"><span class="text">Посмотреть</span></div>
+			<div class="new-item size1">
+				<div class="new-item-img"></div>
+				<h3 class="new-item-title">Заголовок</h3>
+				<p class="new-item-text">fgyhjtrtwyrsetdrytfuyguhi</p>
+			</div>
+			<div class="new-item size1">
+				<div class="new-item-img"></div>
+				<h3 class="new-item-title">Заголовок</h3>
+				<p class="new-item-text">fgyhjtrtwyrsetdrytfuyguhi</p>
+			</div>
+			<div class="new-item size1">
+				<div class="new-item-img"></div>
+				<h3 class="new-item-title">Заголовок</h3>
+				<p class="new-item-text">fgyhjtrtwyrsetdrytfuyguhi</p>
+			</div>
+			<div class="new-item size1">
+				<div class="new-item-img"></div>
+				<h3 class="new-item-title">Заголовок</h3>
+				<p class="new-item-text">fgyhjtrtwyrsetdrytfuyguhi</p>
+			</div>
+		</div>
+		<div class="header"  style="height: 500px;"></div>
+		<div class="box" id='gallery'>
+			<h2 class="box-title"style="margin-left: 10px" >Галерея</h2>
+			<div style="background-image:url(6s.jpg);" class="img-item"></div>
+			<div style="background-image:url(5s.jpg);" class="img-item"></div>
+			<div style="background-image:url(Kub.jpg);" class="img-item"></div>
+			<div style="background-image:url(marshmello.jpg);" class="img-item"></div>
+			<div style="background-image:url(zombi.jpg);" class="img-item"></div>
+			<div style="background-image:url(hero.jpg);" class="img-item"></div>
+		</div>
+		<div class="overlay"><img src="" alt="" class="modal">
+		</div>
+		<script src='lax.js'></script>
+		<script>
+			window.onload = function() {
+		lax.setup() // init
+		const updateLax = () => {
+			lax.update(window.scrollY)
+			window.requestAnimationFrame(updateLax)
+		}
+		window.requestAnimationFrame(updateLax)
+		var overlay = document.querySelector('.overlay');
+		var imgs  = document.querySelectorAll('.img-item');
+		var modal  = document.querySelector('.modal');
+		for (let img of imgs) {
+			img.addEventListener('click' , function(){
+				overlay.style.display = 'flex';
+				modal.setAttribute('src', img.style.backgroundImage.slice(5, -2))
+				setTimeout(function() {
+					modal.classList.add ('transform');
+					overlay.classList.add ('opacity');
+				}, 10);
+			})
+		}
+		overlay.addEventListener('click', function(event){
+			if (event.target == overlay){
+				overlay.classList.remove('opacity');
+				modal.classList.remove('transform');
+				setTimeout(function() {
+					overlay.style.display = 'none';
+				}, 200);
+			}
+		})
+		}
+		</script>
+	</body>
+</html>
